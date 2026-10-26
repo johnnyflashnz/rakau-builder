@@ -63,6 +63,7 @@ const meta={starter:['Rākau Wā','Sentence starter','🟧'],mahi:['Rākau Mahi'
 const audioFiles={"nui": "audio/ahua-01.mp3", "iti": "audio/ahua-02.mp3", "roa": "audio/ahua-03.mp3", "poto": "audio/ahua-04.mp3", "whānui": "audio/ahua-05.mp3", "whero": "audio/ahua-06.mp3", "pango": "audio/ahua-07.mp3", "kākāriki": "audio/ahua-08.mp3", "mā": "audio/ahua-09.mp3", "tere": "audio/ahua-10.mp3", "pōturi": "audio/ahua-11.mp3", "kaha": "audio/ahua-12.mp3", "ngoikore": "audio/ahua-13.mp3", "atawhai": "audio/ahua-14.mp3", "māia": "audio/ahua-15.mp3", "ātaahua": "audio/ahua-16.mp3", "ngahau": "audio/ahua-17.mp3", "harikoa": "audio/ahua-18.mp3", "pōuri": "audio/ahua-19.mp3", "ngenge": "audio/ahua-20.mp3", "riri": "audio/ahua-21.mp3", "oma": "audio/mahi-01.mp3", "kai": "audio/mahi-02.mp3", "moe": "audio/mahi-03.mp3", "pānui": "audio/mahi-04.mp3", "tuhi": "audio/mahi-05.mp3", "kōrero": "audio/mahi-06.mp3", "Kei te": "audio/starter-01.mp3", "He": "audio/starter-02.mp3", "te tama": "audio/wai-01.mp3", "te kōtiro": "audio/wai-02.mp3", "te tamaiti": "audio/wai-03.mp3", "te kaiako": "audio/wai-04.mp3", "te pēpi": "audio/wai-05.mp3", "te kurī": "audio/wai-06.mp3", "te ngeru": "audio/wai-07.mp3", "te hoiho": "audio/wai-08.mp3", "te pōro": "audio/wai-09.mp3", "te pene": "audio/wai-10.mp3", "te awa": "audio/wai-11.mp3", "te whare": "audio/wai-12.mp3", "te motokā": "audio/wai-13.mp3", "te rau": "audio/wai-14.mp3", "te kapua": "audio/wai-15.mp3", "te nakahi": "audio/wai-16.mp3", "te rākau": "audio/wai-17.mp3"};
 let currentPronunciation=null;
 function playKupu(word){
+ stopSentencePlayback();
  const toggle=document.querySelector('#audioEnabled');
  if(!toggle?.checked||!audioFiles[word])return;
  if(currentPronunciation){currentPronunciation.pause();currentPronunciation.currentTime=0}
@@ -70,9 +71,38 @@ function playKupu(word){
  currentPronunciation.play().catch(()=>{});
 }
 document.querySelector('#audioEnabled').addEventListener('change',e=>{
- if(!e.target.checked&&currentPronunciation){currentPronunciation.pause();currentPronunciation.currentTime=0}
+ if(!e.target.checked)stopSentencePlayback()
 });
 
+// Play a checked sentence using the three existing recordings in sequence.
+let sentencePlaybackId=0;
+let lastCheckedSentence=[];
+function stopSentencePlayback(){
+ sentencePlaybackId++;
+ if(currentPronunciation){currentPronunciation.pause();currentPronunciation.currentTime=0;currentPronunciation=null;}
+}
+async function playSentence(wordsToPlay){
+ if(!document.querySelector('#audioEnabled')?.checked)return;
+ stopSentencePlayback();
+ const playbackId=sentencePlaybackId;
+ for(const word of wordsToPlay){
+  if(playbackId!==sentencePlaybackId||!document.querySelector('#audioEnabled')?.checked)return;
+  const file=audioFiles[word];if(!file)continue;
+  const clip=new Audio(file);currentPronunciation=clip;
+  await new Promise(resolve=>{
+   let finished=false;
+   const finish=()=>{if(!finished){finished=true;resolve();}};
+   clip.addEventListener('ended',finish,{once:true});
+   clip.addEventListener('error',finish,{once:true});
+   clip.play().catch(finish);
+   // An interrupted clip resolves on pause, so new selections never queue old audio.
+   clip.addEventListener('pause',finish,{once:true});
+  });
+  if(playbackId!==sentencePlaybackId)return;
+  await new Promise(resolve=>setTimeout(resolve,130));
+ }
+ if(playbackId===sentencePlaybackId)currentPronunciation=null;
+}
 function add(type,word){
   playKupu(word);
   // One starter, one middle (Mahi OR Āhua), and one Wai/Aha.
@@ -96,7 +126,15 @@ function sentenceCheck(){if(chosen.length!==3){show('🤔 Choose three rākau fi
  if(completedSentences.has(sentence)){show('🌱 You have already used that sentence! Try different kupu to earn your next tick.',false);return}
  completedSentences.add(sentence);completed.push(sentence);renderChallenge();
  }
- const result=document.createElement('div');const ma=document.createElement('div');ma.className='maori-result';ma.textContent='🎉 Ka pai! '+sentence;const en=document.createElement('div');en.className='english';en.textContent='🇬🇧 '+translation;result.append(ma,en);if(isChallenge()){const progress=document.createElement('div');progress.style.marginTop='9px';progress.style.fontWeight='800';progress.textContent=completed.length===activeTasks().length?'🏆 Challenge complete! Ka rawe!':'✓ Challenge complete! Now build the next sentence.';result.append(progress)}show(result,true);if(isChallenge()&&completed.length<activeTasks().length){chosen.length=0;draw()}}
+ const result=document.createElement('div');const ma=document.createElement('div');ma.className='maori-result';ma.textContent='🎉 Ka pai! '+sentence;const en=document.createElement('div');en.className='english';en.textContent='🇬🇧 '+translation;result.append(ma,en);if(isChallenge()){const progress=document.createElement('div');progress.style.marginTop='9px';progress.style.fontWeight='800';progress.textContent=completed.length===activeTasks().length?'🏆 Challenge complete! Ka rawe!':'✓ Challenge complete! Now build the next sentence.';result.append(progress)}const replay=document.createElement('button');
+ replay.type='button';replay.className='action secondary';replay.style.marginTop='12px';
+ replay.textContent='🔁 Hear sentence again';
+ replay.addEventListener('click',()=>playSentence([a.word,b.word,c.word]));
+ result.append(replay);
+ show(result,true);
+ lastCheckedSentence=[a.word,b.word,c.word];
+ playSentence(lastCheckedSentence);
+ if(isChallenge()&&completed.length<activeTasks().length){chosen.length=0;draw()}}
 function buildBanks(){const w=document.querySelector('#week').value,banks=document.querySelector('#banks');banks.replaceChildren();for(const type of ['starter','mahi','ahua','wai']){const section=document.createElement('section');section.className='bank';const head=document.createElement('div');head.className='bankhead';const h=document.createElement('h2');h.textContent=meta[type][2]+' '+meta[type][0]+' | '+meta[type][1];head.append(h);section.append(head);const row=document.createElement('div');row.className='words';const visible=words[type].filter(x=>w==='all'||type!=='ahua'||x[2]===Number(w));visible.forEach(([word,meaning])=>{const b=document.createElement('button');b.type='button';b.className='rod '+type;b.dataset.type=type;b.dataset.word=word;b.setAttribute('aria-pressed','false');b.setAttribute('aria-label',word+', '+meaning);const p=document.createElement('span');p.className='panel';const ww=document.createElement('span');ww.className='word';ww.textContent=word;const mm=document.createElement('span');mm.className='meaning';mm.textContent=meaning;p.append(ww,mm);b.append(p);b.addEventListener('click',()=>add(type,word));row.append(b)});section.append(row);banks.append(section)}updateBankHighlights()}
 document.querySelector('#mode').addEventListener('change',()=>{chosen.length=0;draw();renderChallenge();show('🌱 Choose your rākau to begin!',null)});document.querySelector('#level').addEventListener('change',resetChallenge);document.querySelector('#restartChallenge').addEventListener('click',resetChallenge);
 document.querySelector('#check').addEventListener('click',sentenceCheck);document.querySelector('#undo').addEventListener('click',()=>{chosen.pop();draw();show('🌱 Keep building!',null)});document.querySelector('#clear').addEventListener('click',()=>{chosen.length=0;draw();show('🌱 Ready when you are!',null)});document.querySelector('#week').addEventListener('change',()=>{chosen.length=0;draw();buildBanks();show('🌱 New kupu bank selected!',null)});buildBanks();renderChallenge();
