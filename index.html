@@ -125,7 +125,7 @@ header .championship-list li{color:#214c36}
 <div id="placesFeedback" class="places-feedback" aria-live="polite"></div>
 <div id="jumperReward" class="jumper-reward" hidden><strong>🏔️ Ka rawe! You scored at least 8/10!</strong><p>You unlocked Summit Jumper!</p><button type="button" id="jumperUnlock">🦘 Play Summit Jumper</button></div><div id="invadersReward" class="jumper-reward" hidden><strong>🚀 Ka rawe! You scored at least 8/10!</strong><p>You unlocked Space Defenders!</p><button type="button" id="invadersUnlock">👾 Play Space Defenders</button></div><div class="places-controls"><button type="button" id="placesNext" class="action" hidden>Next place →</button><button type="button" id="placesRestart" class="action secondary">↻ Play again</button></div>
 <p class="places-small">Māori names can refer to traditional sites or wider areas rather than exactly matching modern city boundaries. The maps are school-supplied learning references, not navigation maps. No Firebase points are awarded for these quizzes.</p>
-</section><section class="mission-panel" id="missionPanel" hidden aria-label="Maunga Mission"><div class="mission-top"><div><div class="mission-eyebrow">🏔️ TE HAERENGA KI TE TIHI</div><h2>Maunga Mission</h2><p>Complete two different sentences at each checkpoint to climb towards the summit!</p></div><div class="mission-score"><strong id="missionStars">0 / 10</strong><small>⭐ Stars earned</small></div></div><div class="mission-map" id="missionMap" aria-label="Mountain journey checkpoints"><svg class="mission-art" viewBox="0 0 900 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="missionSky" x2="0" y2="1"><stop stop-color="#d9f1f1"/><stop offset="1" stop-color="#f7f4e7"/></linearGradient></defs><rect width="900" height="400" fill="url(#missionSky)"/><path d="M0 360 L170 260 275 295 480 48 650 285 790 235 900 340 900 400 0 400Z" fill="#6f948b"/><path d="M480 48 394 160 448 149 479 171 519 137 553 164Z" fill="#f8fbf6"/><path d="M0 373 140 303 260 325 360 267 470 285 590 243 715 314 900 280 900 400 0 400Z" fill="#3e7d64"/><path d="M0 396 120 356 260 370 390 329 520 353 660 314 800 358 900 328 900 400 0 400Z" fill="#235940"/></svg><div class="mission-trail" id="missionTrail"></div></div><div class="mission-progress"><div id="missionProgressFill"></div></div><div class="mission-current" id="missionCurrent" aria-live="polite"></div><div class="structure-help" id="missionStructure"><strong>🧩 Checkpoint sentence structure</strong><div id="missionStructureRods" class="structure-rods"></div><p id="missionStructureNote"></p><button type="button" id="missionHintToggle" class="structure-toggle" aria-expanded="false">💡 Help me build it</button><p id="missionHint" hidden></p></div><div class="mission-controls"><button class="action secondary" type="button" id="missionRestart">↻ Restart mission</button><button class="action secondary" type="button" id="snakeUnlock" hidden>🐍 Play Summit Snake!</button><button class="action secondary" type="button" id="missionCertificate" hidden>🏅 Print summit certificate</button></div><p class="mission-footnote">Progress is saved only in this browser on this device. Mission progress stays in this browser. The optional classroom selector is stored on this device.</p></section><section class="challenge-panel" id="challengePanel" hidden><h2>🏆 Te Wero Rākau | Sentence Challenge</h2><div class="mode-row"><label for="level"><strong>Choose your level</strong></label><select id="level"><option value="kakano">🌱 Kākano | 3 sentences</option><option value="tipu">🌿 Tipu | 5 sentences</option><option value="rakau">🌳 Rākau | 8 sentences</option></select></div><p class="note">Complete each task using the coloured rākau below. Check your sentence to earn a tick.</p><div class="challenge-status" id="challengeStatus" aria-live="polite"></div><div class="progress"><div class="progress-fill" id="progressFill"></div></div><div class="challenge-prompt" id="challengePrompt"></div><div class="structure-help" id="challengeStructure"><strong>🧩 Sentence structure</strong><div id="challengeStructureRods" class="structure-rods"></div><p id="challengeStructureNote"></p><button type="button" id="challengeHintToggle" class="structure-toggle" aria-expanded="false">💡 Help me build it</button><p id="challengeHint" hidden></p></div><ol class="task-list" id="taskList"></ol><button class="action" id="flappyUnlock" type="button" hidden>🐦 Play Flappy Kiwi!</button><button class="action secondary challenge-next" id="restartChallenge" type="button">↻ Restart this challenge</button></section><div style="text-align:center"><label class="audio-switch"><input type="checkbox" id="audioEnabled" checked> 🔊 Pronunciation audio on</label><p class="audio-hint">Tap a rākau to hear it. Tap a selected rākau again to replay.</p></div><section class="builder"><h2>🧱 Tō rerenga kōrero</h2><div class="note">Your sentence stays here while you choose your rākau.</div><div class="slots" id="slots" aria-label="Sentence building area"><div class="empty">Choose a rākau to begin...</div></div><div class="actions"><button class="action" id="check">✓ Tirohia | Check</button><button class="action secondary" id="undo">↶ Undo</button><button class="action secondary" id="clear">↻ Start again</button></div><div class="feedback" id="feedback" aria-live="polite">🌱 Ready when you are!</div></section><div id="banks"></div><p class="foot">Teacher note: This version checks a limited set of beginner patterns. Some combinations may be structurally correct but unnatural in meaning. Challenge tasks check basic sentence patterns and word categories, not full language accuracy. Review vocabulary and translations before wider classroom use. The optional classroom selection is stored in this browser; shared leaderboards do not collect student names.</p><div class="version">Rākau Sentence Builder v3.9 · Maunga Mission</div><div id="printCertificate" class="mission-certificate" style="display:none"><div><h1>🏔️ Maunga Mission</h1><h2>Te Tihi — Summit Achieved!</h2><p>Ka rawe! You completed all ten sentence challenges.</p><p>Stratford Primary School · Kupu o te Wiki</p></div></div></main><div id="snakeOverlay" class="snake-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="snakeTitle">
+</section><section class="mission-panel" id="missionPanel" hidden aria-label="Maunga Mission"><div class="mission-top"><div><div class="mission-eyebrow">🏔️ TE HAERENGA KI TE TIHI</div><h2>Maunga Mission</h2><p>Complete two different sentences at each checkpoint to climb towards the summit!</p></div><div class="mission-score"><strong id="missionStars">0 / 10</strong><small>⭐ Stars earned</small></div></div><div class="mission-map" id="missionMap" aria-label="Mountain journey checkpoints"><svg class="mission-art" viewBox="0 0 900 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="missionSky" x2="0" y2="1"><stop stop-color="#d9f1f1"/><stop offset="1" stop-color="#f7f4e7"/></linearGradient></defs><rect width="900" height="400" fill="url(#missionSky)"/><path d="M0 360 L170 260 275 295 480 48 650 285 790 235 900 340 900 400 0 400Z" fill="#6f948b"/><path d="M480 48 394 160 448 149 479 171 519 137 553 164Z" fill="#f8fbf6"/><path d="M0 373 140 303 260 325 360 267 470 285 590 243 715 314 900 280 900 400 0 400Z" fill="#3e7d64"/><path d="M0 396 120 356 260 370 390 329 520 353 660 314 800 358 900 328 900 400 0 400Z" fill="#235940"/></svg><div class="mission-trail" id="missionTrail"></div></div><div class="mission-progress"><div id="missionProgressFill"></div></div><div class="mission-current" id="missionCurrent" aria-live="polite"></div><div class="structure-help" id="missionStructure"><strong>🧩 Checkpoint sentence structure</strong><div id="missionStructureRods" class="structure-rods"></div><p id="missionStructureNote"></p><button type="button" id="missionHintToggle" class="structure-toggle" aria-expanded="false">💡 Help me build it</button><p id="missionHint" hidden></p></div><div class="mission-controls"><button class="action secondary" type="button" id="missionRestart">↻ Restart mission</button><button class="action secondary" type="button" id="snakeUnlock" hidden>🐍 Play Summit Snake!</button><button class="action secondary" type="button" id="missionCertificate" hidden>🏅 Print summit certificate</button></div><p class="mission-footnote">Progress is saved only in this browser on this device. Mission progress stays in this browser. The optional classroom selector is stored on this device.</p></section><section class="challenge-panel" id="challengePanel" hidden><h2>🏆 Te Wero Rākau | Sentence Challenge</h2><div class="mode-row"><label for="level"><strong>Choose your level</strong></label><select id="level"><option value="kakano">🌱 Kākano | 3 sentences</option><option value="tipu">🌿 Tipu | 5 sentences</option><option value="rakau">🌳 Rākau | 8 sentences</option></select></div><p class="note">Complete each task using the coloured rākau below. Check your sentence to earn a tick.</p><div class="challenge-status" id="challengeStatus" aria-live="polite"></div><div class="progress"><div class="progress-fill" id="progressFill"></div></div><div class="challenge-prompt" id="challengePrompt"></div><div class="structure-help" id="challengeStructure"><strong>🧩 Sentence structure</strong><div id="challengeStructureRods" class="structure-rods"></div><p id="challengeStructureNote"></p><button type="button" id="challengeHintToggle" class="structure-toggle" aria-expanded="false">💡 Help me build it</button><p id="challengeHint" hidden></p></div><ol class="task-list" id="taskList"></ol><button class="action" id="flappyUnlock" type="button" hidden>🐦 Play Flappy Kiwi!</button><button class="action secondary challenge-next" id="restartChallenge" type="button">↻ Restart this challenge</button></section><div style="text-align:center"><label class="audio-switch"><input type="checkbox" id="audioEnabled" checked> 🔊 Pronunciation audio on</label><p class="audio-hint">Tap a rākau to hear it. Tap a selected rākau again to replay.</p></div><section class="builder"><h2>🧱 Tō rerenga kōrero</h2><div class="note">Your sentence stays here while you choose your rākau.</div><div class="slots" id="slots" aria-label="Sentence building area"><div class="empty">Choose a rākau to begin...</div></div><div class="actions"><button class="action" id="check">✓ Tirohia | Check</button><button class="action secondary" id="undo">↶ Undo</button><button class="action secondary" id="clear">↻ Start again</button></div><div class="feedback" id="feedback" aria-live="polite">🌱 Ready when you are!</div></section><div id="banks"></div><p class="foot">Teacher note: This version checks a limited set of beginner patterns. Some combinations may be structurally correct but unnatural in meaning. Challenge tasks check basic sentence patterns and word categories, not full language accuracy. Review vocabulary and translations before wider classroom use. The optional classroom selection is stored in this browser; shared leaderboards do not collect student names.</p><div class="version">Rākau Sentence Builder v4.0 · Maunga Mission</div><div id="printCertificate" class="mission-certificate" style="display:none"><div><h1>🏔️ Maunga Mission</h1><h2>Te Tihi — Summit Achieved!</h2><p>Ka rawe! You completed all ten sentence challenges.</p><p>Stratford Primary School · Kupu o te Wiki</p></div></div></main><div id="snakeOverlay" class="snake-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="snakeTitle">
 <div class="snake-card"><div class="snake-heading"><div><h2 id="snakeTitle">🐍 Te Nakahi — Summit Snake</h2><p>Your reward for reaching the summit!</p></div><button type="button" id="snakeClose" class="snake-close" aria-label="Close game">✕</button></div>
 <div class="snake-scores"><strong>Score: <span id="snakeScore">0</span></strong><strong>Best: <span id="snakeBest">0</span></strong></div>
 <canvas id="snakeCanvas" width="400" height="400" aria-label="Snake game board. Use arrow keys or WASD to move."></canvas>
@@ -143,13 +143,13 @@ header .championship-list li{color:#214c36}
 </section></div><div id="jumperOverlay" class="jumper-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="jumperTitle">
 <div class="jumper-card">
 <div class="jumper-top"><h2 id="jumperTitle">🏔️ Summit Jumper</h2><button id="jumperClose" type="button" aria-label="Close Summit Jumper">✕</button></div>
-<p>Jump between platforms and climb towards Taranaki Maunga!</p>
+<p>Jump between platforms, dodge hazards, catch springs and climb towards Taranaki Maunga!</p>
 <div class="jumper-scores"><strong>Height: <span id="jumperScore">0</span> m</strong><strong>Best: <span id="jumperBest">0</span> m</strong></div>
 <canvas id="jumperCanvas" width="380" height="500" aria-label="Summit Jumper game. Use left and right arrow keys or A and D to move."></canvas>
 <p id="jumperStatus" aria-live="polite">Press Start to jump!</p>
 <div class="jumper-buttons"><button id="jumperLeft" type="button">◀ Left</button><button id="jumperStart" type="button">▶ Start / Restart</button><button id="jumperRight" type="button">Right ▶</button></div>
 <p class="jumper-tip">Use ← → or A / D. The kiwi jumps automatically. On touchscreens, hold the left/right buttons.</p>
-</div></div><div id="invadersOverlay" class="invaders-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="invadersTitle"><div class="invaders-card"><div class="invaders-top"><h2 id="invadersTitle">👾 Space Defenders</h2><button type="button" id="invadersClose" aria-label="Close game">✕</button></div><p>Defend Aotearoa! Move, fire, and dodge incoming invaders.</p><strong>Score: <span id="invadersScore">0</span> · Best: <span id="invadersBest">0</span> · Lives: <span id="invadersLives">3</span></strong><canvas id="invadersCanvas" width="400" height="480" aria-label="Space Invaders-style game, use left and right arrows and space to fire"></canvas><p id="invadersStatus" aria-live="polite">Press Start!</p><div class="invaders-controls"><button id="invadersLeft" type="button">◀</button><button id="invadersStart" type="button">▶ Start / Restart</button><button id="invadersFire" type="button">🔥 Fire</button><button id="invadersRight" type="button">▶</button></div><p>← → / A D to move, Space to fire. Hold buttons on touchscreens.</p></div></div><script>
+</div></div><div id="invadersOverlay" class="invaders-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="invadersTitle"><div class="invaders-card"><div class="invaders-top"><h2 id="invadersTitle">👾 Space Defenders</h2><button type="button" id="invadersClose" aria-label="Close game">✕</button></div><p>Defend Aotearoa! Faster invaders, weapon upgrades (W) and shields (S).</p><strong>Score: <span id="invadersScore">0</span> · Best: <span id="invadersBest">0</span> · Lives: <span id="invadersLives">3</span></strong><canvas id="invadersCanvas" width="400" height="480" aria-label="Space Invaders-style game, use left and right arrows and space to fire"></canvas><p id="invadersStatus" aria-live="polite">Press Start!</p><div class="invaders-controls"><button id="invadersLeft" type="button">◀</button><button id="invadersStart" type="button">▶ Start / Restart</button><button id="invadersFire" type="button">🔥 Fire</button><button id="invadersRight" type="button">▶</button></div><p>← → / A D to move, Space to fire. Hold buttons on touchscreens.</p></div></div><script>
 
 const tasks={
  kakano:[['Describe something using He + Āhua + Wai/Aha.','describe'],['Tell us what someone is doing using Kei te + Mahi + Wai/Aha.','action'],['Describe how someone is feeling using Kei te + Āhua + Wai/Aha.','feeling']],
@@ -427,16 +427,17 @@ placesStart();
 // Space Defenders: unlocked only after scoring 8/10 in Aotearoa Kei Hea.
 const invOverlay=document.querySelector('#invadersOverlay'),invCanvas=document.querySelector('#invadersCanvas'),ig=invCanvas.getContext('2d');
 let invRunning=false,invRAF=0,invShip={x:185,y:435},invBullets=[],invEnemyBullets=[],invEnemies=[],invDir=1,invScore=0,invLives=3,invTick=0,invKeys={left:false,right:false,fire:false};
+let invWeapon=1,invShield=0,invPowerups=[],invWaveNumber=1,invLastShot=-100,invInvulnerable=0;
 let invBest=0;try{invBest=Number(localStorage.getItem('sps_space_defenders_best')||0)}catch(e){}
 document.querySelector('#invadersBest').textContent=invBest;
 function invStop(){invRunning=false;cancelAnimationFrame(invRAF);invRAF=0}
 function invWave(){
  invEnemies=[];
- for(let row=0;row<4;row++)for(let col=0;col<7;col++)invEnemies.push({x:40+col*45,y:55+row*36,alive:true});
+ for(let row=0;row<3+Math.min(2,Math.floor((invWaveNumber-1)/2));row++)for(let col=0;col<7;col++)invEnemies.push({x:40+col*45,y:55+row*32,alive:true});
  invDir=1;
 }
 function invReset(){
- invStop();invScore=0;invLives=3;invTick=0;invShip.x=185;invBullets=[];invEnemyBullets=[];invKeys={left:false,right:false,fire:false};invWave();
+ invStop();invScore=0;invLives=3;invTick=0;invWeapon=1;invShield=0;invPowerups=[];invWaveNumber=1;invLastShot=-100;invInvulnerable=0;invShip.x=185;invBullets=[];invEnemyBullets=[];invKeys={left:false,right:false,fire:false};invWave();
  document.querySelector('#invadersScore').textContent='0';document.querySelector('#invadersLives').textContent='3';
  document.querySelector('#invadersStatus').textContent='Press Start to defend Aotearoa!';
  invDraw();
@@ -444,10 +445,13 @@ function invReset(){
 function invDraw(){
  ig.fillStyle='#071527';ig.fillRect(0,0,400,480);
  for(let i=0;i<35;i++){ig.fillStyle='#ffffff70';ig.fillRect((i*73+13)%400,(i*109+31)%480,2,2)}
- ig.fillStyle='#64d5a6';ig.beginPath();ig.moveTo(invShip.x+15,420);ig.lineTo(invShip.x+30,451);ig.lineTo(invShip.x,451);ig.closePath();ig.fill();
+ ig.fillStyle=invInvulnerable>0&&invTick%8<4?'#c8fbff':'#64d5a6';ig.beginPath();ig.moveTo(invShip.x+15,420);ig.lineTo(invShip.x+30,451);ig.lineTo(invShip.x,451);ig.closePath();ig.fill();
  for(const e of invEnemies)if(e.alive){ig.fillStyle='#a5e777';ig.fillRect(e.x,e.y,25,17);ig.fillStyle='#243b37';ig.fillRect(e.x+5,e.y+5,4,4);ig.fillRect(e.x+16,e.y+5,4,4)}
  ig.fillStyle='#f6dc73';for(const b of invBullets)ig.fillRect(b.x,b.y,4,13);
  ig.fillStyle='#ff8a7b';for(const b of invEnemyBullets)ig.fillRect(b.x,b.y,5,12);
+ for(const power of invPowerups){ig.fillStyle=power.type==='weapon'?'#ffdd4a':'#74d9ff';ig.fillRect(power.x,power.y,17,17);ig.fillStyle='#102030';ig.font='bold 13px sans-serif';ig.fillText(power.type==='weapon'?'W':'S',power.x+3,power.y+13)}
+ if(invShield>0){ig.strokeStyle='#75d8ff';ig.lineWidth=3;ig.beginPath();ig.arc(invShip.x+15,439,23,0,Math.PI*2);ig.stroke()}
+ ig.fillStyle='#fff';ig.font='bold 14px sans-serif';ig.fillText('Wave '+invWaveNumber+'  ·  Weapon '+invWeapon+(invShield?'  ·  Shield':''),10,20);
 }
 function invFinish(message){
  invStop();
@@ -460,23 +464,24 @@ function invFrame(){
  if(!invRunning)return;invTick++;
  if(invKeys.left)invShip.x=Math.max(0,invShip.x-4.8);
  if(invKeys.right)invShip.x=Math.min(370,invShip.x+4.8);
- if(invKeys.fire&&invTick%12===0)invBullets.push({x:invShip.x+13,y:419});
+ if(invKeys.fire&&invTick-invLastShot>=(invWeapon===1?11:8)){invLastShot=invTick;const offsets=invWeapon===1?[13]:invWeapon===2?[5,22]:[3,13,25];offsets.forEach(offset=>invBullets.push({x:invShip.x+offset,y:419}))}
  invBullets.forEach(b=>b.y-=7);invEnemyBullets.forEach(b=>b.y+=3.4);
- if(invTick%22===0){
+ if(invTick%9===0){
   const alive=invEnemies.filter(e=>e.alive);
   if(alive.length){
    if(alive.some(e=>e.x+(invDir>0?31:-6)>400||e.x+(invDir>0?31:-6)<0)){invDir*=-1;alive.forEach(e=>e.y+=12)}
-   alive.forEach(e=>e.x+=invDir*(8+Math.min(12,invScore/50)));
-   if(Math.random()<.7){const shooter=alive[Math.floor(Math.random()*alive.length)];invEnemyBullets.push({x:shooter.x+12,y:shooter.y+20})}
+   alive.forEach(e=>e.x+=invDir*(5+Math.min(9,invWaveNumber*1.5+invScore/250)));
+   if(Math.random()<Math.min(.65,.20+invWaveNumber*.055)){const shooter=alive[Math.floor(Math.random()*alive.length)];invEnemyBullets.push({x:shooter.x+12,y:shooter.y+20})}
   }
  }
- for(const b of invBullets)for(const e of invEnemies)if(e.alive&&b.x>=e.x&&b.x<=e.x+28&&b.y>=e.y&&b.y<=e.y+19){e.alive=false;b.y=-100;invScore+=10;document.querySelector('#invadersScore').textContent=invScore;break}
+ for(const b of invBullets)for(const e of invEnemies)if(e.alive&&b.x>=e.x&&b.x<=e.x+28&&b.y>=e.y&&b.y<=e.y+19){e.alive=false;b.y=-100;invScore+=10;if(Math.random()<.075)invPowerups.push({x:e.x+5,y:e.y,type:Math.random()<.72?'weapon':'shield'});document.querySelector('#invadersScore').textContent=invScore;break}
  invBullets=invBullets.filter(b=>b.y>-20);
- for(const b of invEnemyBullets)if(b.y>420&&b.y<455&&b.x>invShip.x&&b.x<invShip.x+30){b.y=500;invLives--;document.querySelector('#invadersLives').textContent=invLives}
+ invPowerups.forEach(power=>{power.y+=2;if(power.y>418&&power.y<455&&power.x+17>invShip.x&&power.x<invShip.x+30){if(power.type==='weapon')invWeapon=Math.min(3,invWeapon+1);else invShield=1;power.y=600}});invPowerups=invPowerups.filter(power=>power.y<480);if(invInvulnerable>0)invInvulnerable--;
+ for(const b of invEnemyBullets)if(b.y>420&&b.y<455&&b.x>invShip.x&&b.x<invShip.x+30){b.y=500;if(invInvulnerable<=0){if(invShield)invShield=0;else{invLives--;document.querySelector('#invadersLives').textContent=invLives}invInvulnerable=70}}
  invEnemyBullets=invEnemyBullets.filter(b=>b.y<480);
  if(invEnemies.some(e=>e.alive&&e.y>410)){invFinish('The invaders reached the ground!');return}
  if(invLives<=0){invFinish('Game over!');return}
- if(invEnemies.every(e=>!e.alive)){invScore+=100;document.querySelector('#invadersScore').textContent=invScore;invWave()}
+ if(invEnemies.every(e=>!e.alive)){invScore+=100;invWaveNumber++;document.querySelector('#invadersScore').textContent=invScore;invWave()}
  invDraw();invRAF=requestAnimationFrame(invFrame);
 }
 function invOpen(){
@@ -512,15 +517,16 @@ const jumperOverlay=document.querySelector('#jumperOverlay');
 const jumperCanvas=document.querySelector('#jumperCanvas'),jc=jumperCanvas.getContext('2d');
 const JW=380,JH=500;
 let jumperRunning=false,jumperFrame=0,jumperRAF=0,jumperPlatforms=[],jumperPlayer=null,jumperHeight=0,jumperKeys={left:false,right:false};
+let jumperHazards=[],jumperBoost=0,jumperGrace=0;
 let jumperBest=0;try{jumperBest=Number(localStorage.getItem('sps_summit_jumper_best')||0)}catch(e){}
 document.querySelector('#jumperBest').textContent=jumperBest;
 function jumperStatus(t){document.querySelector('#jumperStatus').textContent=t}
 function jumperStop(){jumperRunning=false;cancelAnimationFrame(jumperRAF);jumperRAF=0}
 function jumperInit(){
- jumperStop();jumperHeight=0;jumperFrame=0;jumperKeys={left:false,right:false};
+ jumperStop();jumperHeight=0;jumperFrame=0;jumperHazards=[];jumperBoost=0;jumperGrace=0;jumperKeys={left:false,right:false};
  jumperPlayer={x:175,y:400,w:30,h:31,vy:-11};
- jumperPlatforms=[{x:125,y:452,w:130}];
- for(let y=375;y>=-80;y-=68)jumperPlatforms.push({x:25+Math.random()*245,y,w:85});
+ jumperPlatforms=[{x:125,y:452,w:130,type:'normal',dx:0,used:false}];
+ for(let y=375;y>=-80;y-=68)jumperPlatforms.push({x:25+Math.random()*245,y,w:85,type:'normal',dx:0,used:false});
  jumperStatus('Press Start! Use ← → to steer your kiwi.');
  document.querySelector('#jumperScore').textContent='0';jumperDraw();
 }
@@ -530,7 +536,8 @@ function jumperDraw(){
  g.fillStyle='#a2c9ad';g.beginPath();g.moveTo(0,500);g.lineTo(100,320);g.lineTo(160,430);g.lineTo(275,270);g.lineTo(380,450);g.lineTo(380,500);g.fill();
  g.fillStyle='#6d9f83';g.beginPath();g.moveTo(0,500);g.lineTo(75,390);g.lineTo(145,460);g.lineTo(250,335);g.lineTo(380,460);g.lineTo(380,500);g.fill();
  g.fillStyle='#fff';g.beginPath();g.moveTo(250,335);g.lineTo(275,270);g.lineTo(303,354);g.lineTo(278,339);g.fill();
- for(const pl of jumperPlatforms){g.fillStyle='#6d5035';g.fillRect(pl.x,pl.y+5,pl.w,9);g.fillStyle='#5cae5e';g.fillRect(pl.x,pl.y,pl.w,9)}
+ for(const pl of jumperPlatforms){g.fillStyle=pl.type==='fragile'?'#a9715b':'#6d5035';g.fillRect(pl.x,pl.y+5,pl.w,9);g.fillStyle=pl.type==='moving'?'#5bc1db':pl.type==='fragile'?'#e2a475':'#5cae5e';g.fillRect(pl.x,pl.y,pl.w,9);if(pl.type==='spring'){g.fillStyle='#f2c74b';g.fillRect(pl.x+pl.w/2-7,pl.y-12,14,12);g.fillStyle='#fff';g.fillRect(pl.x+pl.w/2-5,pl.y-10,10,3)}}
+ for(const h of jumperHazards){g.fillStyle='#c34e44';g.beginPath();g.arc(h.x,h.y,12,0,Math.PI*2);g.fill();g.fillStyle='#fff';g.fillRect(h.x-6,h.y-4,4,4);g.fillRect(h.x+3,h.y-4,4,4)}
  const k=jumperPlayer;if(!k)return;
  g.fillStyle='#735c44';g.beginPath();g.ellipse(k.x+15,k.y+17,15,17,0,0,Math.PI*2);g.fill();
  g.fillStyle='#f4e3c1';g.beginPath();g.arc(k.x+23,k.y+11,4,0,Math.PI*2);g.fill();
@@ -541,19 +548,22 @@ function jumperDraw(){
 function jumperTick(){
  if(!jumperRunning)return;
  const k=jumperPlayer,prevBottom=k.y+k.h;
- if(jumperKeys.left)k.x-=4.7;if(jumperKeys.right)k.x+=4.7;
+ jumperFrame++;if(jumperKeys.left)k.x-=4.7;if(jumperKeys.right)k.x+=4.7;
+ for(const pl of jumperPlatforms)if(pl.type==='moving'){pl.x+=pl.dx;if(pl.x<3||pl.x+pl.w>JW-3)pl.dx*=-1}
+ for(const h of jumperHazards){h.x+=h.dx;if(h.x<14||h.x>JW-14)h.dx*=-1}
  if(k.x>JW)k.x=-k.w;if(k.x+k.w<0)k.x=JW;
  k.vy+=.38;k.y+=k.vy;
  if(k.vy>0)for(const pl of jumperPlatforms){
-  if(prevBottom<=pl.y+7&&k.y+k.h>=pl.y&&k.x+k.w>pl.x&&k.x<pl.x+pl.w){k.y=pl.y-k.h;k.vy=-11.5;break}
+  if(!pl.used&&prevBottom<=pl.y+7&&k.y+k.h>=pl.y&&k.x+k.w>pl.x&&k.x<pl.x+pl.w){k.y=pl.y-k.h;k.vy=pl.type==='spring'?-17:-11.5;if(pl.type==='fragile')pl.used=true;break}
  }
  if(k.y<200&&k.vy<0){
-  const dy=200-k.y;k.y=200;jumperPlatforms.forEach(pl=>pl.y+=dy);jumperHeight+=dy;
+  const dy=200-k.y;k.y=200;jumperPlatforms.forEach(pl=>pl.y+=dy);jumperHazards.forEach(h=>h.y+=dy);jumperHeight+=dy;
   document.querySelector('#jumperScore').textContent=Math.floor(jumperHeight/5);
  }
- jumperPlatforms=jumperPlatforms.filter(pl=>pl.y<JH+30);
+ jumperPlatforms=jumperPlatforms.filter(pl=>pl.y<JH+30&&!pl.used);jumperHazards=jumperHazards.filter(h=>h.y<JH+30);
  let top=Math.min(...jumperPlatforms.map(pl=>pl.y));
- while(top>30){top-=62+Math.random()*15;jumperPlatforms.push({x:15+Math.random()*265,y:top,w:80+Math.random()*15})}
+ while(top>30){top-=58+Math.random()*18;const difficulty=Math.min(.65,jumperHeight/3500);const roll=Math.random();const type=roll<.12+difficulty*.16?'moving':roll<.21+difficulty*.23?'fragile':roll<.30?'spring':'normal';const x=15+Math.random()*265;jumperPlatforms.push({x,y:top,w:85,type,dx:type==='moving'?(Math.random()<.5?-1:1)*(1+Math.random()*1.3):0,used:false});if(jumperHeight>250&&Math.random()<.14+difficulty*.18)jumperHazards.push({x:35+Math.random()*310,y:top-34,dx:(Math.random()<.5?-1:1)*1.2})}
+ if(jumperGrace>0)jumperGrace--;if(jumperGrace===0&&jumperHazards.some(h=>Math.abs(h.x-(k.x+15))<23&&Math.abs(h.y-(k.y+16))<24)){jumperStop();const score=Math.floor(jumperHeight/5);if(score>jumperBest){jumperBest=score;try{localStorage.setItem('sps_summit_jumper_best',String(score))}catch(e){}document.querySelector('#jumperBest').textContent=score}if(score>0)window.dispatchEvent(new CustomEvent('rakau:game',{detail:{game:'jumper',score}}));jumperStatus(`A hazard got your kiwi! You climbed ${score} m. Press Start to try again.`);jumperDraw();return}
  if(k.y>JH+35){
   jumperStop();const score=Math.floor(jumperHeight/5);
   if(score>jumperBest){jumperBest=score;try{localStorage.setItem('sps_summit_jumper_best',String(score))}catch(e){}document.querySelector('#jumperBest').textContent=score}
